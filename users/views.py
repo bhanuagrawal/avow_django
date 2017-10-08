@@ -294,6 +294,7 @@ def user_profile(request):
 
 
 @csrf_exempt
+@verifyToken(forGetRequest=False, forPostRequest=True, getUsernameFromKey="user", userShouldExist=False)
 def add_user_android_device(request):
 
 
