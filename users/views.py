@@ -53,7 +53,7 @@ def user_list(request):
 
 
 @csrf_exempt
-#@verifyToken(forGetRequest=True, forPostRequest=True, getUsernameFromKey="username")
+@verifyToken(forGetRequest=True, forPostRequest=True, getUsernameFromKey="username")
 def update_user(request):
 	"""
 	List all code Userss, or create a new Users.
@@ -65,7 +65,10 @@ def update_user(request):
 		user.password=data['password']
 		user.status = data['status']
 		user.save()
-
+		try:
+			Follow.objects.filter(user=user).delete()
+		except Exception as e:
+		    print "could not unfollow"
 		user.password=""
 		serializer = UserSerializerNew(user)
 		return JsonResponse(serializer.data, status=201)
