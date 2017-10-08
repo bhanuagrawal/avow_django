@@ -12,14 +12,14 @@ def handle_uploaded_file(f):
 			destination.write(chunk)
 
 
-def validToken(token, userShouldExit=True):
+def validToken(token):
 	try:
 		username, device_id = token.split(' ')
 		user = Users.objects.get(username=username)
 		device = AndroidDevice.objects.get(user=user, device_id=device_id)
 		return True
 	except Users.DoesNotExist:
-		return not userShouldExit
+		return False
 	except AndroidDevice.DoesNotExist:
 		return False
 
@@ -61,8 +61,7 @@ def verifyToken(*arguments, **keywords):
 		 			return JsonResponse({'token': 'absent', 'success': False, 'message': 'Authentication Failed'}, status=403)
 
 
-		 		userShouldExit = keywords.get('userShouldExit', True)
-				if not validToken(token, userShouldExit):
+				if not validToken(token):
 					return JsonResponse({'token': 'invalid', 'success': False, 'message': 'Authentication Failed'}, status=403)
 
 			return old_function(*args, **kwds)
