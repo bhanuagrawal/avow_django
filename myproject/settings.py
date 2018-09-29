@@ -19,7 +19,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kximodvx)a3!jo&2*bm_v1t#!-2kfb2_el69cs$9cbd8ji)ywg'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,8 +81,8 @@ DATABASES = {
 
          'ENGINE': 'django.db.backends.mysql',
          'NAME': 'bhanuagrawal001$photos',
-         'USER': 'bhanuagrawal001',
-         'PASSWORD': '#Minimum8',
+         'USER': '',
+         'PASSWORD': '',
          'HOST': 'bhanuagrawal001.mysql.pythonanywhere-services.com'
 
     }
