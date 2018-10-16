@@ -77,11 +77,8 @@ def sendNotification(devices, image_url):
 	},
 	 "registration_ids": devices
 	 }
-#AAAA8pXjXrs:APA91bEDU3tMPySj_i1I69BtnH0qfpEg8AkHto3tckmNpH24tKGy1K8yPvnyCuXhEbv9Ra2rxXvemLRP1pVKu-j7LXAQxXWXKNVvNY9km5tZQMsDIB0IqdZs_y5Ihb5lrQwHokgMxljo
-#AAAA8pXjXrs:APA91bEDU3tMPySj_i1I69BtnH0qfpEg8AkHto3tckmNpH24tKGy1K8yPvnyCuXhEbv9Ra2rxXvemLRP1pVKu-j7LXAQxXWXKNVvNY9km5tZQMsDIB0IqdZs_y5Ihb5lrQwHokgMxljo
-#AAAAXIOG_bU:APA91bEW7BNFg_eBcl-0oGbrtWx-4ud3XSz7_BDI6pBN_ZFY4LXfIQi15a5MiKp3lUwJAFP-LmandLiMukcsEDg1GJ-R5fiH4yZhaVnFOeccOjr6Xdl_oDnSLqHZn1fmIh2oXlK2UxyU
 	headers = {"Content-Type":"application/json",
-			"Authorization": "key=AAAA8pXjXrs:APA91bEDU3tMPySj_i1I69BtnH0qfpEg8AkHto3tckmNpH24tKGy1K8yPvnyCuXhEbv9Ra2rxXvemLRP1pVKu-j7LXAQxXWXKNVvNY9km5tZQMsDIB0IqdZs_y5Ihb5lrQwHokgMxljo"}
+			"Authorization": "key="}
 	requests.post(url, data=json.dumps(body), headers=headers, verify=False)
 
 
